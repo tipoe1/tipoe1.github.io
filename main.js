@@ -2,6 +2,7 @@ $("#convert_btn").click(function(){
     input = $("#input").val();
     output = input.replaceAll(",", ".")
     output = output.replaceAll(" ", "<br>")
+    output = output.replaceAll("\n", "<br>")
     $("#output").html(output)
 });
 
