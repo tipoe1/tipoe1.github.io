@@ -1,5 +1,6 @@
 $("#convert_btn").click(function(){
     input = $("#input").val();
     output = input.replaceAll(",", ".")
-    $("#output").text(output)
+    output = output.replaceAll(" ", "<br>")
+    $("#output").html(output)
 })
