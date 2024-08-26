@@ -6,6 +6,10 @@ $("#convert_btn").click(function(){
     $("#output").html(output)
 });
 
+$("#reset_btn").click(function(){
+    $("#input").val();
+});
+
 function copy(){
     var copyText = document.getElementById("output")
     const clipboardItem = new ClipboardItem({
