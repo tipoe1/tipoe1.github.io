@@ -7,7 +7,7 @@ $("#convert_btn").click(function(){
 });
 
 $("#reset_btn").click(function(){
-    $("#input").val();
+    $("#input").val('');
 });
 
 function copy(){
