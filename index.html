@@ -17,6 +17,11 @@
       font-weight: bold;
       margin: 20px 0;
     }
+    .footnote {
+      font-size: 14px;
+      color: gray;
+      margin-top: 10px;
+    }
     button {
       padding: 10px 20px;
       font-size: 16px;
@@ -24,7 +29,7 @@
     }
   </style>
 </head>
-<!-- <body>
+    <!-- <body>
     <h1>CSV Converter</h1>
     <h2>CSV-Daten hier eingeben</h2>
     <p1>Alle Spalten EINZELN konvertieren!</p1>
@@ -43,6 +48,7 @@
   <p>Click the button to generate a simile about friendship!</p>
 
   <div class="simile" id="simileDisplay">Your simile will appear here!</div>
+  <div class="footnote" id="footnoteDisplay">Die Übersetzung erscheint hier.</div>
 
   <button onclick="generateSimile()">Generate simile!</button>
 
@@ -69,12 +75,47 @@
           "a loyal partner", "a close brother", "a sister at heart", "a radiant smile", "a cozy fire"
         ];
 
+      const translations = {
+      "a steady rock": "ein fester Fels",
+      "a warm hug": "eine warme Umarmung",
+      "a bright day": "ein heller Tag",
+      "a reliable compass": "ein verlässlicher Kompass",
+      "a sheltering tree": "ein schützender Baum",
+      "the morning sun": "die Morgensonne",
+      "a true friend": "ein wahrer Freund",
+      "a calm lake": "ein ruhiger See",
+      "an open book": "ein offenes Buch",
+      "a precious gem": "ein kostbarer Edelstein",
+      "a kind soul": "eine freundliche Seele",
+      "a loyal dog": "ein treuer Hund",
+      "a gentle breeze": "eine sanfte Brise",
+      "a wise owl": "eine weise Eule",
+      "a warm blanket": "eine warme Decke",
+      "a strong bond": "eine starke Bindung",
+      "a faithful companion": "ein treuer Begleiter",
+      "a loving family": "eine liebevolle Familie",
+      "a helping hand": "eine helfende Hand",
+      "a safe harbor": "ein sicherer Hafen",
+      "a long-lasting bond": "eine langanhaltende Bindung",
+      "a cup of tea": "eine Tasse Tee",
+      "a sunny day": "ein sonniger Tag",
+      "a peaceful haven": "ein friedliches Refugium",
+      "an anchor": "ein Anker",
+      "a loyal partner": "ein treuer Partner",
+      "a close brother": "ein enger Bruder",
+      "a sister at heart": "eine Schwester im Herzen",
+      "a radiant smile": "ein strahlendes Lächeln",
+      "a cozy fire": "ein gemütliches Feuer"
+    };
+
+
     function generateSimile() {
       const randomPhraseBefore = phrasesBefore[Math.floor(Math.random() * phrasesBefore.length)];
       const randomPhraseAfter = phrasesAfter[Math.floor(Math.random() * phrasesAfter.length)];
       const simile = `${randomPhraseBefore} ${randomPhraseAfter}`;
       
       document.getElementById("simileDisplay").textContent = simile;
+      document.getElementById("footnoteDisplay").textContent = translations[randomPhraseAfter] || "Übersetzung nicht verfügbar.";
     }
   </script>
 
