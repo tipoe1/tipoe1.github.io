@@ -4,9 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSV converter</title>
+<!--     <title>CSV converter</title> -->
+<title>Friendship Simile Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .simile {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
-<body>
+<!-- <body>
     <h1>CSV Converter</h1>
     <h2>CSV-Daten hier eingeben</h2>
     <p1>Alle Spalten EINZELN konvertieren!</p1>
@@ -18,7 +36,50 @@
     <h2>Ausgabe</h2>
     <button id="copy_btn">Alle Werte kopieren</button>
     <div id="output"></div>   
+</body> -->
+<body>
+
+  <h1>Friendship Simile Generator</h1>
+  <p>Click the button to generate a simile about friendship!</p>
+
+  <div class="simile" id="simileDisplay">Your simile will appear here!</div>
+
+  <button onclick="generateSimile()">Generate simile!</button>
+
+  <script>
+    const phrasesBefore = [
+          "Our friendship is like", "Being with you is like", "When you are with me it feels like",
+          "Our bond is like", "Having you as a friend is like", "Spending time with you is like",
+          "Your presence is like", "With you, life is as", "Our connection feels like", "Friendship with you is as",
+          "Having you by my side is like", "Time together is as", "Being friends with you is like",
+          "Your friendship feels as", "Sharing moments with you is like", "Our friendship feels as",
+          "You make me feel as", "When we are together it is as", "Knowing you is like", "Our memories feel as",
+          "The time we share is as", "Having you around is like", "With you, everything feels as",
+          "Being close to you is like", "The bond we share is as", "Our friendship is as",
+          "When we laugh together it feels as", "You make everything seem as", "Spending time with you feels like",
+          "The way you support me is like"
+        ];
+    
+        const phrasesAfter = [
+          "a steady rock", "a warm hug", "a bright day", "a reliable compass", "a sheltering tree",
+          "the morning sun", "a true friend", "a calm lake", "an open book", "a precious gem",
+          "a kind soul", "a loyal dog", "a gentle breeze", "a wise owl", "a warm blanket",
+          "a strong bond", "a faithful companion", "a loving family", "a helping hand", "a safe harbor",
+          "a long-lasting bond", "a cup of tea", "a sunny day", "a peaceful haven", "an anchor",
+          "a loyal partner", "a close brother", "a sister at heart", "a radiant smile", "a cozy fire"
+        ];
+
+    function generateSimile() {
+      const randomPhraseBefore = phrasesBefore[Math.floor(Math.random() * phrasesBefore.length)];
+      const randomPhraseAfter = phrasesAfter[Math.floor(Math.random() * phrasesAfter.length)];
+      const simile = `${randomPhraseBefore} ${randomPhraseAfter}`;
+      
+      document.getElementById("simileDisplay").textContent = simile;
+    }
+  </script>
+
 </body>
+    
 <script src="jquery.min.js"></script>
 <script src="main.js"></script>
 <link href="styles.css" rel="stylesheet">
